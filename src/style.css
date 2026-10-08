@@ -1,0 +1,959 @@
+@font-face {
+  font-family: "GFF-Latin-Bold";
+
+  src:
+    url("https://dl.dir.freefiremobile.com/common/web_event/common/fonts/website/GFFLatinW05-Bold.woff2")
+    format("woff2");
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  min-height: 100%;
+
+  font-family:
+    "GFF-Latin-Bold",
+    Arial,
+    sans-serif;
+
+  background: #050713;
+
+  color: white;
+}
+
+
+body {
+  min-height: 100vh;
+}
+
+
+button,
+input {
+  font-family: inherit;
+}
+
+
+.page {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  padding: 25px 14px;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      #35477f 0,
+      #11172e 28%,
+      #060812 68%,
+      #03040a 100%
+    );
+}
+
+
+.page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  left: 50%;
+  top: -380px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(92,127,255,.22);
+
+  filter: blur(100px);
+}
+
+
+.stars {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: .5;
+
+  background-image:
+    radial-gradient(
+      white 1px,
+      transparent 1px
+    );
+
+  background-size:
+    85px 85px;
+
+  pointer-events: none;
+}
+
+
+.panel {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(
+    720px,
+    100%
+  );
+
+  margin: auto;
+
+  padding: 18px;
+
+  border:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      .12
+    );
+
+  border-radius: 27px;
+
+  background:
+    rgba(7,10,23,.82);
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 30px 100px
+    rgba(0,0,0,.65);
+}
+
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 3px 3px 17px;
+}
+
+
+.brand img {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 15px;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 0 25px
+    rgba(95,133,255,.45);
+}
+
+
+.brand h1 {
+  margin: 0;
+
+  font-size: 21px;
+
+  letter-spacing: 1px;
+}
+
+
+.brand p {
+  margin: 5px 0 0;
+
+  color: #8591b5;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+.anime-bg {
+  position: relative;
+
+  height: 245px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      125deg,
+      #0d1228,
+      #1c2850 48%,
+      #080b18
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.1);
+}
+
+
+.anime-bg::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: -80px;
+  top: -120px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(91,132,255,.18);
+
+  filter: blur(45px);
+}
+
+
+.moon {
+  position: absolute;
+
+  width: 105px;
+  height: 105px;
+
+  right: 38px;
+  top: 28px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #b9c9ff
+    );
+
+  box-shadow:
+    0 0 55px
+    rgba(178,199,255,.6);
+}
+
+
+.character {
+  position: absolute;
+
+  z-index: 4;
+
+  right: 40px;
+  bottom: -27px;
+
+  width: 225px;
+  height: 245px;
+}
+
+
+.hair-back {
+  position: absolute;
+
+  width: 142px;
+  height: 150px;
+
+  left: 37px;
+  top: 7px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #060811,
+      #202b50
+    );
+
+  clip-path:
+    polygon(
+      5% 40%,
+      18% 11%,
+      35% 22%,
+      50% 0,
+      67% 20%,
+      86% 9%,
+      100% 44%,
+      87% 58%,
+      100% 75%,
+      75% 66%,
+      69% 100%,
+      48% 75%,
+      30% 98%,
+      27% 67%,
+      0 81%,
+      13% 55%
+    );
+}
+
+
+.head {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 57px;
+  top: 40px;
+
+  width: 112px;
+  height: 125px;
+
+  border-radius:
+    48% 52% 47% 51%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd9c4,
+      #c88472
+    );
+
+  box-shadow:
+    inset -12px -5px
+    25px
+    rgba(92,43,40,.2);
+}
+
+
+.hair-front {
+  position: absolute;
+
+  left: -5px;
+  top: -19px;
+
+  width: 125px;
+  height: 86px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #070914,
+      #263354
+    );
+
+  clip-path:
+    polygon(
+      0 50%,
+      14% 13%,
+      29% 27%,
+      48% 0,
+      59% 30%,
+      79% 9%,
+      100% 48%,
+      80% 43%,
+      67% 75%,
+      54% 45%,
+      38% 70%,
+      24% 40%,
+      8% 72%
+    );
+}
+
+
+.eye {
+  position: absolute;
+
+  top: 67px;
+
+  width: 14px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    #111629;
+
+  box-shadow:
+    0 0 6px
+    rgba(70,104,255,.4);
+}
+
+
+.eye-left {
+  left: 23px;
+}
+
+
+.eye-right {
+  right: 23px;
+}
+
+
+.nose {
+  position: absolute;
+
+  width: 8px;
+  height: 14px;
+
+  left: 52px;
+  top: 77px;
+
+  border-right:
+    1px solid
+    rgba(95,47,45,.5);
+}
+
+
+.mouth {
+  position: absolute;
+
+  left: 45px;
+  top: 99px;
+
+  width: 22px;
+  height: 7px;
+
+  border-bottom:
+    2px solid
+    #8f4755;
+
+  border-radius: 50%;
+}
+
+
+.neck {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 91px;
+  top: 150px;
+
+  width: 43px;
+  height: 47px;
+
+  background: #c78774;
+}
+
+
+.body-anime {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 21px;
+  bottom: -10px;
+
+  width: 185px;
+  height: 120px;
+
+  border-radius:
+    65px 65px 10px 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #263455,
+      #080b17
+    );
+}
+
+
+.anime-copy {
+  position: absolute;
+
+  z-index: 7;
+
+  left: 28px;
+  bottom: 34px;
+}
+
+
+.anime-title {
+  font-size: 42px;
+
+  letter-spacing: 6px;
+
+  text-shadow:
+    0 5px 25px
+    rgba(94,131,255,.4);
+}
+
+
+.anime-sub {
+  margin-top: 3px;
+
+  color: #91a5df;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+}
+
+
+.capacity {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin: 15px 0;
+
+  padding: 13px 15px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(255,255,255,.045);
+}
+
+
+.capacity span {
+  color: #7885a7;
+
+  font-size: 10px;
+}
+
+
+.capacity b {
+  color: #91adff;
+
+  font-size: 11px;
+}
+
+
+.dropzone {
+  position: relative;
+
+  min-height: 155px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  border:
+    1px dashed
+    rgba(119,151,255,.5);
+
+  border-radius: 20px;
+
+  background:
+    rgba(82,112,206,.055);
+
+  transition:
+    .2s ease;
+}
+
+
+.dropzone:hover,
+.dropzone.active {
+  transform: translateY(-2px);
+
+  border-color:
+    #88a5ff;
+
+  background:
+    rgba(82,112,206,.13);
+
+  box-shadow:
+    0 10px 40px
+    rgba(65,91,190,.15);
+}
+
+
+.upload-circle {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 49px;
+  height: 49px;
+
+  margin-bottom: 9px;
+
+  border-radius: 50%;
+
+  color: #a8bcff;
+
+  font-size: 26px;
+
+  background:
+    rgba(98,132,255,.12);
+}
+
+
+.dropzone strong {
+  font-size: 16px;
+
+  letter-spacing: 1px;
+}
+
+
+.dropzone span {
+  margin-top: 5px;
+
+  color: #7e8baa;
+
+  font-size: 10px;
+}
+
+
+.dropzone small {
+  margin-top: 8px;
+
+  color: #4d5a7b;
+
+  font-size: 9px;
+}
+
+
+.result {
+  margin-top: 15px;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+.preview {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 150px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #050711;
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+}
+
+
+.preview img {
+  display: block;
+
+  max-width: 100%;
+
+  max-height: 390px;
+
+  object-fit: contain;
+}
+
+
+.information {
+  margin-top: 10px;
+
+  padding: 10px 14px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(255,255,255,.04);
+}
+
+
+.information > div {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 8px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.05);
+
+  font-size: 10px;
+}
+
+
+.information > div:last-child {
+  border-bottom: 0;
+}
+
+
+.information span {
+  color: #7180a1;
+}
+
+
+.information b {
+  max-width: 65%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #d7e0ff;
+}
+
+
+.progress-area {
+  margin-top: 13px;
+}
+
+
+.progress-label {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+
+  color: #7c89aa;
+
+  font-size: 10px;
+}
+
+
+.progress-label b {
+  color: #9ab2ff;
+}
+
+
+.progress {
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #1a2136;
+}
+
+
+.progress div {
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #587fff,
+      #a274ff
+    );
+
+  transition:
+    width .15s linear;
+}
+
+
+.url-area {
+  margin-top: 13px;
+
+  padding: 13px;
+
+  border:
+    1px solid
+    rgba(100,132,255,.2);
+
+  border-radius: 16px;
+
+  background:
+    rgba(71,101,222,.08);
+}
+
+
+.url-area label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #8294c9;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+.url-row {
+  display: flex;
+
+  gap: 7px;
+}
+
+
+.url-row input {
+  min-width: 0;
+
+  flex: 1;
+
+  height: 43px;
+
+  padding: 0 11px;
+
+  border: 0;
+
+  outline: 0;
+
+  border-radius: 10px;
+
+  color: #b8c7ff;
+
+  background: #050813;
+
+  font-size: 10px;
+}
+
+
+.url-row button {
+  height: 43px;
+
+  padding: 0 15px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5d83ff,
+      #8b6aff
+    );
+}
+
+
+.again {
+  width: 100%;
+
+  height: 44px;
+
+  margin-top: 10px;
+
+  border: 1px solid
+    rgba(255,255,255,.07);
+
+  border-radius: 11px;
+
+  cursor: pointer;
+
+  color: #aebcf0;
+
+  background:
+    rgba(255,255,255,.05);
+}
+
+
+.error {
+  margin-top: 12px;
+
+  padding: 11px;
+
+  border-radius: 11px;
+
+  color: #ffabb8;
+
+  background:
+    rgba(255,50,80,.08);
+
+  border:
+    1px solid
+    rgba(255,70,100,.2);
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+footer {
+  padding-top: 15px;
+
+  text-align: center;
+
+  color: #4f5b79;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+
+@media(max-width:600px) {
+
+  .page {
+    padding: 9px;
+  }
+
+  .panel {
+    padding: 12px;
+
+    border-radius: 21px;
+  }
+
+  .anime-bg {
+    height: 215px;
+  }
+
+  .character {
+    right: -30px;
+
+    transform:
+      scale(.78);
+
+    transform-origin:
+      bottom right;
+  }
+
+  .anime-copy {
+    left: 17px;
+    bottom: 25px;
+  }
+
+  .anime-title {
+    font-size: 29px;
+
+    letter-spacing: 4px;
+  }
+
+  .anime-sub {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+  .url-row {
+    flex-direction: column;
+  }
+
+  .url-row button {
+    width: 100%;
+  }
+
+  }
