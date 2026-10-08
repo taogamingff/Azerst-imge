@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:name([a-z0-9]{6}\\.(png|jpg|jpeg|webp|gif))",
+      "destination": "/api/image?name=:name"
+    }
+  ]
+}
